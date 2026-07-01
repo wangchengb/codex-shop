@@ -1,0 +1,32 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# production output
+dist/
+
+# TypeScript / tooling caches
+*.tsbuildinfo
+.vite/
+
+# local environment files
+.env
+.env.*
+!.env.example
+
+# editor and OS metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Codex workspace metadata
+.agents/
+.codex/
+
+# logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
