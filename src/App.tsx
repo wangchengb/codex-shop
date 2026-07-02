@@ -100,7 +100,10 @@ function App() {
 
       <section className="reviews-section" id="reviews">
         <div className="section-head compact" data-reveal><div><span className="section-no">03 / 街 坊 说</span><h2>嘴巴不会<br/><em>说假话。</em></h2></div><div className="rating"><strong>4.9</strong><span>{[1,2,3,4,5].map(i => <Star key={i} size={18} fill="currentColor"/>)}<small>来自 1,286 条食客评价</small></span></div></div>
-        <div className="reviews-grid">{reviews.map((review, i) => <article className="review-card" data-reveal key={review.name}><Quote size={38}/><p>“{review.quote}”</p><footer><div className="avatar">{review.name[0]}</div><div><strong>{review.name}</strong><span>{review.source}</span></div><time>{review.date}</time></footer><span className="review-number">0{i+1}</span></article>)}</div>
+        <div className="reviews-grid">{reviews.map((review, i) => <article className={`review-card ${i === 0 ? 'review-card-featured' : ''}`} data-reveal key={review.name}>
+          {i === 0 && <figure className="review-photo"><img src="/images/review-boiled-beef.png" alt="食客在餐桌上随手拍下的水煮牛肉"/><figcaption>食客现场拍摄 · 水煮牛肉</figcaption></figure>}
+          <div className="review-content"><Quote size={38}/><p>“{review.quote}”</p><footer><div className="avatar">{review.name[0]}</div><div><strong>{review.name}</strong><span>{review.source}</span></div><time>{review.date}</time></footer></div><span className="review-number">0{i+1}</span>
+        </article>)}</div>
       </section>
 
       <section className="visit-section" id="visit">
