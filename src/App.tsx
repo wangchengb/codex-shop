@@ -84,6 +84,7 @@ function App() {
         <div className="section-head" data-reveal><div><span className="section-no">01 / 点 菜</span><h2>招牌硬菜<br/><em>放开吃。</em></h2></div><p>菜没有花架子，火候不能有半点马虎。<br/>辣度可以商量，香味绝不打折。</p></div>
         <div className="filter-row" role="group" aria-label="菜品分类">{categories.map(item => <button key={item} className={category === item ? 'active' : ''} onClick={() => setCategory(item)}>{item}</button>)}</div>
         <div className="dish-grid">{filteredDishes.map((dish, index) => <article className="dish-card" data-reveal key={dish.id} style={{'--i': index} as React.CSSProperties}>
+          <div className={`dish-image dish-image-${dish.id}`} role="img" aria-label={`${dish.name} 菜品照片`} />
           <div className="dish-top"><span className="dish-index">0{dish.id}</span><span className="dish-mark">{dish.mark}</span></div>
           <div className="pepper-row" aria-label={`辣度 ${dish.spicy} 级`}>{[1,2,3].map(n => <Flame key={n} size={16} fill={n <= dish.spicy ? 'currentColor' : 'none'} className={n <= dish.spicy ? '' : 'muted'}/>)}</div>
           <h3>{dish.name}</h3><p>{dish.subtitle}</p><div className="dish-foot"><span>{dish.category}</span><strong><small>¥</small>{dish.price}</strong></div>

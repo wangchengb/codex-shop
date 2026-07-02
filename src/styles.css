@@ -52,9 +52,17 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible { 
 .filter-row button { padding:10px 22px; border:1px solid #4b4034; border-radius:99px; background:transparent; cursor:pointer; font-weight:700; }
 .filter-row button.active { background:var(--ink); color:#fff; }
 .dish-grid { position:relative; max-width:1280px; margin:auto; display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-.dish-card { min-height:350px; padding:28px; display:flex; flex-direction:column; background:#e6d3b5; border:1px solid #8e7b645c; box-shadow:8px 9px 0 #221b15; transition:.25s transform,.25s background; transform:rotate(calc((var(--i) - 2) * .25deg)); }
+.dish-card { min-height:520px; padding:0 28px 28px; display:flex; flex-direction:column; overflow:hidden; background:#e6d3b5; border:1px solid #8e7b645c; box-shadow:8px 9px 0 #221b15; transition:.25s transform,.25s background; transform:rotate(calc((var(--i) - 2) * .25deg)); }
 .dish-card:nth-child(even) { background:#d7b989; }
 .dish-card:hover { transform:translateY(-7px) rotate(0); background:#f6c744; }
+.dish-image { height:205px; margin:0 -28px 22px; flex:0 0 auto; background-image:url('/images/dish-sprite.webp'); background-size:200% 300%; background-repeat:no-repeat; border-bottom:5px solid var(--red); filter:saturate(.94) contrast(1.04); transition:.3s transform,.3s filter; }
+.dish-card:hover .dish-image { transform:scale(1.025); filter:saturate(1.08) contrast(1.04); }
+.dish-image-1 { background-position:0 0; }
+.dish-image-2 { background-position:100% 0; }
+.dish-image-3 { background-position:0 50%; }
+.dish-image-4 { background-position:100% 50%; }
+.dish-image-5 { background-position:0 100%; }
+.dish-image-6 { background-position:100% 100%; }
 .dish-top,.dish-foot { display:flex; align-items:center; justify-content:space-between; }
 .dish-index { font-family:Georgia,serif; font-weight:900; font-size:36px; color:#9c8266; }
 .dish-mark { color:white; background:var(--red); padding:6px 9px; transform:rotate(3deg); font-size:11px; font-weight:800; }
@@ -181,7 +189,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible { 
   .filter-row { flex-wrap:nowrap; overflow:auto; padding-bottom:8px; }
   .filter-row button { flex:0 0 auto; }
   .dish-grid { grid-template-columns:1fr; }
-  .dish-card { min-height:300px; box-shadow:5px 6px 0 #221b15; }
+  .dish-card { min-height:500px; box-shadow:5px 6px 0 #221b15; }
+  .dish-image { height:230px; }
   .story-image-wrap { height:500px; }
   .story-copy { padding:80px 24px; }
   .brush { font-size:46px; }
